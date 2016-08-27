@@ -1,0 +1,7 @@
+*.pyc
+
+slackorator.cfg
+tldb.cfg
+tweetorator.cfg
+
+tannlegen.log
