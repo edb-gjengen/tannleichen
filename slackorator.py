@@ -13,20 +13,20 @@ hello this is documentation
 
 __version__ = "0.1"
 
-template = {
-    'channel': '#tannlegen',
-    'username': 'Tannlegen',
-    'icon_emoji': ':beers:'
-}
-
-configname = "slackorator.cfg"
-cfg = ConfigParser.RawConfigParser()
-cfg.read(configname)
-
-headers = {'content-type': 'application/json'}
-hook = cfg.get("stuff", "hook")
-
 def post_confession(text):
+    template = {
+        'channel': '#tannlegen',
+        'username': 'Tannlegen',
+        'icon_emoji': ':beers:'
+    }
+    
+    configname = "slackorator.cfg"
+    cfg = ConfigParser.RawConfigParser()
+    cfg.read(configname)
+    
+    headers = {'content-type': 'application/json'}
+    hook = cfg.get("stuff", "hook")
+
     # Return if text only contains whitespace
     if re.search(r'\S', text) is None:
         logging.info("Confession only containing whitespace. Abort")
