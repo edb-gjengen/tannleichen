@@ -36,7 +36,7 @@ def get_edit_box(prompt=None):
                u"See something you like?", 
 	       u"Who is your favorite tonight?"
 		u"Is the Wolf howling tonight?",
-		u"Forekommer der Prostitution?!"
+		u"Forekommer der Prostitution?!",
 		u"Have you hugged a Tappetårner tonight?",
 		u"Have you hugged a KAK'ster tonight?",
 		u"Anyone you wanna kiss?"]
