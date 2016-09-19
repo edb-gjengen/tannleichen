@@ -11,7 +11,7 @@ from time import sleep
 
 logging.basicConfig(format='[%(asctime)s] %(levelname)s: %(message)s', filename='tannlegen.log', level=logging.DEBUG)
 
-__version__ = "0.2"
+__version__ = "0.21" #Dan-Mikkel slang inn flere prompts.
 
 asciiheader = """   ___           ___           ___           ___           ___       ___           ___           ___           ___     \n  /\  \         /\  \         /\__\         /\__\         /\__\     /\  \         /\  \         /\  \         /\__\    \n  \:\  \       /::\  \       /::|  |       /::|  |       /:/  /    /::\  \       /::\  \       /::\  \       /::|  |   \n   \:\  \     /:/\:\  \     /:|:|  |      /:|:|  |      /:/  /    /:/\:\  \     /:/\:\  \     /:/\:\  \     /:|:|  |   \n   /::\  \   /::\~\:\  \   /:/|:|  |__   /:/|:|  |__   /:/  /    /::\~\:\  \   /:/  \:\  \   /::\~\:\  \   /:/|:|  |__ \n  /:/\:\__\ /:/\:\ \:\__\ /:/ |:| /\__\ /:/ |:| /\__\ /:/__/    /:/\:\ \:\__\ /:/__/_\:\__\ /:/\:\ \:\__\ /:/ |:| /\__\\\n /:/  \/__/ \/__\:\/:/  / \/__|:|/:/  / \/__|:|/:/  / \:\  \    \:\~\:\ \/__/ \:\  /\ \/__/ \:\~\:\ \/__/ \/__|:|/:/  /\n/:/  /           \::/  /      |:/:/  /      |:/:/  /   \:\  \    \:\ \:\__\    \:\ \:\__\    \:\ \:\__\       |:/:/  / \n\/__/            /:/  /       |::/  /       |::/  /     \:\  \    \:\ \/__/     \:\/:/  /     \:\ \/__/       |::/  /  \n                /:/  /        /:/  /        /:/  /       \:\__\    \:\__\        \::/  /       \:\__\         /:/  /   \n                \/__/         \/__/         \/__/         \/__/     \/__/         \/__/         \/__/         \/__/    \n                                                                                              Landets frieste tannlegestol"""
 
@@ -32,8 +32,14 @@ def get_edit_box(prompt=None):
                u"Are you having fun?",
                u"Salute the Lonely Wolf!",
                u"How long are you planning on staying?",
-               u"Please don't post peoples names.",
-               u"See something you like?"]
+               u"Please don't post peoples names...",
+               u"See something you like?", 
+	       u"Who is your favorite tonight?"
+		u"Is the Wolf howling tonight?",
+		u"Forekommer der Prostitution?!"
+		u"Have you hugged a Tappetårner tonight?",
+		u"Have you hugged a KAK'ster tonight?",
+		u"Anyone you wanna kiss?"]
     if not prompt:
         prompt = random.choice(prompts)
     prompt = prompt + ":\n"
