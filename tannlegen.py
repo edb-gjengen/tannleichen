@@ -42,7 +42,7 @@ def get_edit_box(prompt=None):
                u"How long are you planning on staying?",
                u"Please don't post peoples names...",
                u"See something you like?",
-	       u"Who is your favorite tonight?"
+	       u"Who is your favorite tonight?",
 		u"Is the Wolf howling tonight?",
 		u"Forekommer der Prostitution?!",
 		u"Have you hugged a Tappetårner tonight?",
