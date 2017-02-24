@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #coding: utf-8
-
+rows = 11
 alphabet = [
 [
 r'''     ___      ''',

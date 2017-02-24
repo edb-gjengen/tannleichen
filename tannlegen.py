@@ -9,19 +9,46 @@ import os
 import logging
 import datetime
 from time import sleep
+from alphabet import *
+from asciigriser import gris
 
 logging.basicConfig(format='[%(asctime)s] %(levelname)s: %(message)s', filename='tannlegen.log', level=logging.DEBUG)
 
 __version__ = "0.21" #Dan-Mikkel slang inn flere prompts.
 
-asciiheaderSTANDARD = """   ___           ___           ___           ___           ___       ___           ___           ___           ___     \n  /\  \         /\  \         /\__\         /\__\         /\__\     /\  \         /\  \         /\  \         /\__\    \n  \:\  \       /::\  \       /::|  |       /::|  |       /:/  /    /::\  \       /::\  \       /::\  \       /::|  |   \n   \:\  \     /:/\:\  \     /:|:|  |      /:|:|  |      /:/  /    /:/\:\  \     /:/\:\  \     /:/\:\  \     /:|:|  |   \n   /::\  \   /::\~\:\  \   /:/|:|  |__   /:/|:|  |__   /:/  /    /::\~\:\  \   /:/  \:\  \   /::\~\:\  \   /:/|:|  |__ \n  /:/\:\__\ /:/\:\ \:\__\ /:/ |:| /\__\ /:/ |:| /\__\ /:/__/    /:/\:\ \:\__\ /:/__/_\:\__\ /:/\:\ \:\__\ /:/ |:| /\__\\\n /:/  \/__/ \/__\:\/:/  / \/__|:|/:/  / \/__|:|/:/  / \:\  \    \:\~\:\ \/__/ \:\  /\ \/__/ \:\~\:\ \/__/ \/__|:|/:/  /\n/:/  /           \::/  /      |:/:/  /      |:/:/  /   \:\  \    \:\ \:\__\    \:\ \:\__\    \:\ \:\__\       |:/:/  / \n\/__/            /:/  /       |::/  /       |::/  /     \:\  \    \:\ \/__/     \:\/:/  /     \:\ \/__/       |::/  /  \n                /:/  /        /:/  /        /:/  /       \:\__\    \:\__\        \::/  /       \:\__\         /:/  /   \n                \/__/         \/__/         \/__/         \/__/     \/__/         \/__/         \/__/         \/__/    \n                                                                                              Landets frieste tannlegestol"""
-asciiheader = asciiheaderSTANDARD
-asciiheaderSTIFFI = """     ___       ___                     ___          ___                 \n    /\  \     /\  \         ___       /\  \        /\  \         ___    \n   /::\  \    \:\  \       /\  \     /::\  \      /::\  \       /\  \   \n  /:/\ \  \    \:\  \      \:\  \   /:/\:\  \    /:/\:\  \      \:\  \  \n _\:\~\ \  \   /::\  \     /::\__\ /::\~\:\  \  /::\~\:\  \     /::\__\ \n/\ \:\ \ \__\ /:/\:\__\ __/:/\/__//:/\:\ \:\__\/:/\:\ \:\__\ __/:/\/__/ \n\:\ \:\ \/__//:/  \/__//\/:/  /   \/__\:\ \/__/\/__\:\ \/__//\/:/  /    \n \:\ \:\__\ /:/  /     \::/__/         \:\__\       \:\__\  \::/__/     \n  \:\/:/  / \/__/       \:\__\          \/__/        \/__/   \:\__\     \n   \::/  /               \/__/                                \/__/     \n   \/__/                                                              \n                                                                 15 år med RESPEKT og MORO!"""
+header = "tannlegen"#Max 10 bokstaver!
+slogan = "Norges frieste tannlegestol"
+
+#Random bullshittery som kanskje dukker opp
+
+n = random.randint(0,100)
+if (n == 55):
+    header = "sos"
+    slogan = "Jeg er fanget i Tannlegestolen! Kontakt Stryret!"
+if (n == 69):
+    header = "Sexy"
+    slogan = "Virru værra med még hjem inatt?"
+if (n == 0):
+    slogan = "videreutvikles av Dan-Mikkel"
+
+#Ting som MÅ dukke opp avhengig av tid
 
 d = datetime.datetime.today();
-if ((d.day == 23 or d.day == 24) and d.month == 2):
-    asciiheader = asciiheaderSTIFFI
-    d = d
+if ((d.day == 23 or d.day == 25) and d.month == 2):
+    header = "stiffi"
+    slogan = "15 år med RESPEKT og MORO!"
+
+c = map(lambda x: ord(x)-ord('a'),header.lower())
+s = ""
+for i in range(rows):
+    for j in c:
+            s+= alphabet[j][i]
+    s+= "\n"
+
+s+="\n                                                                      "
+s+=slogan
+
+asciiheader = s
 
 palette = [
     ('header', 'white', 'dark red'),
@@ -36,7 +63,8 @@ def get_edit_box(prompt=None):
                u"How are you feeling?",
                u"What's going on?",
                u"How are you doing?",
-               u"How's it going?"]
+               u"How's it going?",
+               u"Skriv navnet ditt her og vi melder deg inn i SOS Rasisme"]
     if not prompt:
         prompt = random.choice(prompts)
     prompt = prompt + ":\n"
