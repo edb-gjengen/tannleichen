@@ -36,18 +36,7 @@ def get_edit_box(prompt=None):
                u"How are you feeling?",
                u"What's going on?",
                u"How are you doing?",
-               u"How's it going?",
-               u"Are you having fun?",
-               u"Salute the Lonely Wolf!",
-               u"How long are you planning on staying?",
-               u"Please don't post peoples names...",
-               u"See something you like?",
-	       u"Who is your favorite tonight?",
-		u"Is the Wolf howling tonight?",
-		u"Forekommer der Prostitution?!",
-		u"Have you hugged a Tappetårner tonight?",
-		u"Have you hugged a KAK'ster tonight?",
-		u"Anyone you wanna kiss?"]
+               u"How's it going?"]
     if not prompt:
         prompt = random.choice(prompts)
     prompt = prompt + ":\n"
@@ -59,10 +48,10 @@ def exit_on_q(key):
 
 class ConfessionBox(urwid.Filler):
     def keypress(self, size, key):
-        """
+        #"""
         if key == 'f12':
-            statusbar.base_widget.set_text([('err', u"test err"),('suc', u"test suc")])
-        """
+            statusbar.base_widget.set_text([('err', u"test err "),('suc', u"test suc")])
+        #"""
         if key != 'enter':
             return super(ConfessionBox, self).keypress(size, key)
         text = self.original_widget.get_edit_text()
