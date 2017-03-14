@@ -72,7 +72,12 @@ def get_edit_box(prompt=None):
                u"How are you doing?",
                u"How's it going?",
                u"Skriv navnet ditt her og vi melder deg inn i SOS Rasisme",
-		u"Er du innover eller utover?"]
+		u"Er du innover eller utover?",
+		u"Why are you not dancing on the table?",
+		u"GÅ DIN VEI!!!",
+		u"What song makes you dance on the table?",
+		u"Who are you in love with?",
+		u"Remember to use condoms! Anyway, what's up?"]
     if not prompt:
         prompt = random.choice(prompts)
     prompt = prompt + ":\n"
