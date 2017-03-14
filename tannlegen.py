@@ -57,6 +57,8 @@ s+=slogan
 
 asciiheader = s
 
+#Legacy code
+
 palette = [
     ('header', 'white', 'dark red'),
     ('inside', '', 'dark green'),
@@ -99,6 +101,8 @@ class ConfessionBox(urwid.Filler):
         tweetorator.post_confession(text)
         #slackorator.post_confession(text)
         self.original_widget = get_edit_box()
+	#TODO: Must find way to make header refresh. This is the best candidate to have such code!
+	#statusbar.base_widget.set_text([('err', u"Something got refreshed!"),('suc', u"test suc") ])
 
 outside = urwid.AttrMap(urwid.Divider(), 'outside')
 inside = urwid.AttrMap(urwid.Divider(), 'inside')
