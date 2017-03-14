@@ -27,9 +27,16 @@ if (n == 55):
     slogan = "Jeg er fanget i Tannlegestolen! Kontakt Stryret!"
 if (n == 69):
     header = "Sexy"
-    slogan = "Virru værra med még hjem inatt?"
+    slogan = "Virru værra med meg hjem inatt?"
 if (n == 0):
     slogan = "videreutvikles av Dan-Mikkel"
+if (n == 1):
+	header = "tt"
+	slogan = "Tappetårnet er sexy!"
+if (n == 2):
+	header = "Storebror"
+	slogan = "Politihøyskolen ser deg, ikke tiss utenfor!"
+
 
 #Ting som MÅ dukke opp avhengig av tid
 
@@ -64,7 +71,8 @@ def get_edit_box(prompt=None):
                u"What's going on?",
                u"How are you doing?",
                u"How's it going?",
-               u"Skriv navnet ditt her og vi melder deg inn i SOS Rasisme"]
+               u"Skriv navnet ditt her og vi melder deg inn i SOS Rasisme",
+		u"Er du innover eller utover?"]
     if not prompt:
         prompt = random.choice(prompts)
     prompt = prompt + ":\n"
