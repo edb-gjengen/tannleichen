@@ -99,7 +99,7 @@ class ConfessionBox(urwid.Filler):
             return super(ConfessionBox, self).keypress(size, key)
         text = self.original_widget.get_edit_text()
         tweetorator.post_confession(text)
-        #slackorator.post_confession(text)
+        slackorator.post_confession(text)
         self.original_widget = get_edit_box()
 	#TODO: Must find way to make header refresh. This is the best candidate to have such code!
 	#statusbar.base_widget.set_text([('err', u"Something got refreshed!"),('suc', u"test suc") ])
